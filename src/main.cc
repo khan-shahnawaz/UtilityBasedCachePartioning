@@ -4,7 +4,6 @@
 #include "ooo_cpu.h"
 #include "uncore.h"
 #include <fstream>
-
 uint8_t warmup_complete[NUM_CPUS], 
         simulation_complete[NUM_CPUS], 
         all_warmup_complete = 0, 
@@ -16,9 +15,8 @@ uint8_t warmup_complete[NUM_CPUS],
 uint64_t warmup_instructions     = 1000000,
          simulation_instructions = 10000000,
          champsim_seed;
-
+//extern UNCORE uncore;
 time_t start_time;
-
 // PAGE TABLE
 uint32_t PAGE_TABLE_LATENCY = 0, SWAP_LATENCY = 0;
 queue <uint64_t > page_queue;
@@ -600,6 +598,7 @@ int main(int argc, char** argv)
     for (int i=0; i<argc; i++) {
         if (found_traces)
         {
+        
             printf("CPU %d runs %s\n", count_traces, argv[i]);
 
             sprintf(ooo_cpu[count_traces].trace_string, "%s", argv[i]);

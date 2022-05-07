@@ -14,7 +14,7 @@ class UNCORE {
 
     // LLC
     CACHE LLC{"LLC", LLC_SET, LLC_WAY, LLC_SET*LLC_WAY, LLC_WQ_SIZE, LLC_RQ_SIZE, LLC_PQ_SIZE, LLC_MSHR_SIZE};
-
+    int32_t wayAllocated[NUM_CPUS]={0};
     // DRAM
     MEMORY_CONTROLLER DRAM{"DRAM"}; 
 
