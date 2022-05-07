@@ -99,6 +99,13 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
     if (hit && (type == WRITEBACK)) // writeback hit does not update LRU state
         return;
 
+    for (uint32_t i=0; i<NUM_WAY; i++) {
+        if (block[set][i].lru < block[set][way].lru && block[set][i].cpu==cpu) {
+            block[set][i].lru++;
+            
+        }
+    }
+    block[set][way].lru = 0; // promote to the MRU position
     return lru_update(set, way);
 }
 
