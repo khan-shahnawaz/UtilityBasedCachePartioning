@@ -1,0 +1,19 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 0
+Simulation Instructions: 1000000
+Number of CPUs: 4
+LLC sets: 8192
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs /home/skhan/Assignments/CS204Project/ChampSim/dpc3_traces/cloud9_phase5_core0.trace.xz
+CPU 1 runs /home/skhan/Assignments/CS204Project/ChampSim/dpc3_traces/cloud9_phase5_core1.trace.xz
+CPU 2 runs /home/skhan/Assignments/CS204Project/ChampSim/dpc3_traces/cloud9_phase5_core2.trace.xz
+CPU 3 runs /home/skhan/Assignments/CS204Project/ChampSim/dpc3_traces/cloud9_phase5_core3.trace.xz
+CPU 0 Bimodal branch predictor
+CPU 1 Bimodal branch predictor
+CPU 2 Bimodal branch predictor
+CPU 3 Bimodal branch predictor
+bimodal-no-no-no-no-lru-4core: src/main.cc:308: uint64_t va_to_pa(uint32_t, uint64_t, uint64_t, uint64_t, uint8_t): Assertion `0' failed.

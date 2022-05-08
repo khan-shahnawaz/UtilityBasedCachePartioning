@@ -14,7 +14,7 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
     // fill invalid line first
     for (way=0; way<NUM_WAY; way++) {
         if (block[set][way].valid == false) {
-        
+    
             DP ( if (warmup_complete[cpu]) {
             cout << "[" << NAME << "] " << __func__ << " instr_id: " << instr_id << " invalid set: " << set << " way: " << way;
             cout << hex << " address: " << (full_addr>>LOG2_BLOCK_SIZE) << " victim address: " << block[set][way].address << " data: " << block[set][way].data;
@@ -23,18 +23,23 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
             break;
         }
     }
-
     // LRU victim
+    uint32_t cpuBlockCount[NUM_CPUS];
+    for (int i = 0; i<NUM_CPUS;i++)
+    {
+            cpuBlockCount[i]=0;
+    }
+    for (int i = 0; i<NUM_WAY;i++)
+    {
+        if (block[set][i].valid)
+            cpuBlockCount[block[set][i].cpu]++;
+    }
     if (way == NUM_WAY) {
-        uint8_t cpuBlockCount[NUM_CPUS]={0};
-        for (way = 0; way<NUM_WAY;way++)
-        {
-                cpuBlockCount[block[set][way].cpu]++;
-        }
+        
         if (cpuBlockCount[cpu]>=uncore.wayAllocated[cpu])
         {
             for (way=0; way<NUM_WAY; way++) {
-                if (block[set][way].lru == uncore.wayAllocated[cpu]-1 && block[set][way].cpu==cpu) {
+                if (block[set][way].lru == cpuBlockCount[cpu]-1 && block[set][way].cpu==cpu) {
                     DP ( if (warmup_complete[cpu]) {
                     cout << "[" << NAME << "] " << __func__ << " instr_id: " << instr_id << " replace set: " << set << " way: " << way;
                     cout << hex << " address: " << (full_addr>>LOG2_BLOCK_SIZE) << " victim address: " << block[set][way].address << " data: " << block[set][way].data;
@@ -61,10 +66,25 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
     }
 
     if (way == NUM_WAY) {
-        cerr << "[" << NAME << "] " << __func__ << " no victim! set: " << set << endl;
+        cerr << "[" << NAME << "] " << __func__ << " no victim! set: " << set  << endl;
+        for (int i=0;i<NUM_CPUS;i++)
+        {
+            cerr << uncore.wayAllocated[i] << " "<< cpuBlockCount[i] << endl;
+        }
+        for (int i=0;i<NUM_WAY;i++)
+        {
+            cerr << "CPU: " << block[set][i].cpu << " LRU: "<< block[set][i].lru << " Valid: " << block[set][i].valid<<"Requested: "<<cpu <<endl;
+        }
         assert(0);
     }
-
+    // if (set%128==0)
+    // {
+    // for (int i=0;i<NUM_CPUS;i++)
+    // {
+    //     cout << cpuBlockCount[i] << " ";
+    // }
+    // cout <<"\n";
+    // }
     return way;
 }
 
@@ -98,7 +118,10 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
     // baseline LRU
     if (hit && (type == WRITEBACK)) // writeback hit does not update LRU state
         return;
-
+    if (hit==0)
+    {
+        block[set][way].lru=UINT32_MAX;
+    }
     for (uint32_t i=0; i<NUM_WAY; i++) {
         if (block[set][i].lru < block[set][way].lru && block[set][i].cpu==cpu) {
             block[set][i].lru++;
@@ -106,7 +129,7 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
         }
     }
     block[set][way].lru = 0; // promote to the MRU position
-    return lru_update(set, way);
+    //return lru_update(set, way);
 }
 
 void CACHE::llc_replacement_final_stats()
