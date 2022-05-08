@@ -11,9 +11,9 @@ Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
 CPU 0 runs /home/skhan/Assignments/CS204Project/ChampSim/dpc3_traces/gcc_13B.trace.xz
 CPU 0 Bimodal branch predictor
 
-Warmup complete CPU 0 instructions: 1000003 cycles: 556143 (Simulation time: 0 hr 0 min 2 sec) 
+Warmup complete CPU 0 instructions: 1000003 cycles: 556143 (Simulation time: 0 hr 0 min 3 sec) 
 
-Finished CPU 0 instructions: 1000002 cycles: 3860080 cumulative IPC: 0.259062 (Simulation time: 0 hr 0 min 6 sec) 
+Finished CPU 0 instructions: 1000002 cycles: 3860080 cumulative IPC: 0.259062 (Simulation time: 0 hr 0 min 7 sec) 
 
 ChampSim completed all CPUs
 
