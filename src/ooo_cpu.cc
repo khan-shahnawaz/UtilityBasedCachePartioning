@@ -1,6 +1,6 @@
 #include "ooo_cpu.h"
 #include "set.h"
-
+#include "AuxiliaryTagDirectory.h"
 // out-of-order core
 O3_CPU ooo_cpu[NUM_CPUS]; 
 uint64_t current_core_cycle[NUM_CPUS], stall_cycle[NUM_CPUS];

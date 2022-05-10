@@ -2,7 +2,7 @@
 #define OOO_CPU_H
 
 #include "cache.h"
-#include "AuxiiaryTagDirectory.h"
+#include "AuxiliaryTagDirectory.h"
 #ifdef CRC2_COMPILE
 #define STAT_PRINTING_PERIOD 1000000
 #else

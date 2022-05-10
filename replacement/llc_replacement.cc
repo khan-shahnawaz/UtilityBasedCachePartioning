@@ -122,6 +122,15 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
     {
         block[set][way].lru=UINT32_MAX;
     }
+    for (int cc=0;cc<NUM_CPUS;cc++)
+    {
+        cout << cc << ":\n";
+        for (int i=0;i<LLC_WAY;i++)
+        {
+            cout << ooo_cpu[cc].TagDirectory.UMON_Global[i]<<" ";
+        }
+        cout << "\n";
+    }
     //cout << cpu << " " << block[set][way].cpu << " " << hit <<endl;
     for (uint32_t i=0; i<NUM_WAY; i++) {
         if (block[set][i].lru < block[set][way].lru && block[set][i].cpu==cpu) {
