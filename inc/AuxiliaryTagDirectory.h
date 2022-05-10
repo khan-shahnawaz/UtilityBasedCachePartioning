@@ -1,4 +1,5 @@
-
+#ifndef ATD_H
+#define ATD_H
 #include "champsim.h"
 #include "cache.h"
 #define SamplingFrequency 32
@@ -33,6 +34,7 @@ class ATD {
             UMON_Global[i]=0;
         }
     };
-    int UpdateATD(PACKET *packet);
+    void UpdateATD(PACKET *packet);
 };
 
+#endif

@@ -1,0 +1,69 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/skhan/Assignments/CS204Project/ChampSim'
+ 
+for dir in ./branch ./prefetcher ./src ./replacement ./scripts ./cvp_tracer; do mkdir -p obj/$dir; done
+echo "Generating dependencies for src/block.cc..."
+g++ -MM -MF obj/src/block.d -MP -MT obj/src/block.o -Wall -O3 -std=c++11 -c -g -Iinc   src/block.cc
+echo "Compiling src/block.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/block.cc -o obj/src/block.o
+echo "Generating dependencies for src/cache.cc..."
+g++ -MM -MF obj/src/cache.d -MP -MT obj/src/cache.o -Wall -O3 -std=c++11 -c -g -Iinc   src/cache.cc
+echo "Compiling src/cache.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/cache.cc -o obj/src/cache.o
+echo "Generating dependencies for src/AuxiliaryTagDirectory.cc..."
+g++ -MM -MF obj/src/AuxiliaryTagDirectory.d -MP -MT obj/src/AuxiliaryTagDirectory.o -Wall -O3 -std=c++11 -c -g -Iinc   src/AuxiliaryTagDirectory.cc
+echo "Compiling src/AuxiliaryTagDirectory.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/AuxiliaryTagDirectory.cc -o obj/src/AuxiliaryTagDirectory.o
+echo "Generating dependencies for src/uncore.cc..."
+g++ -MM -MF obj/src/uncore.d -MP -MT obj/src/uncore.o -Wall -O3 -std=c++11 -c -g -Iinc   src/uncore.cc
+echo "Compiling src/uncore.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/uncore.cc -o obj/src/uncore.o
+echo "Generating dependencies for src/ooo_cpu.cc..."
+g++ -MM -MF obj/src/ooo_cpu.d -MP -MT obj/src/ooo_cpu.o -Wall -O3 -std=c++11 -c -g -Iinc   src/ooo_cpu.cc
+echo "Compiling src/ooo_cpu.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/ooo_cpu.cc -o obj/src/ooo_cpu.o
+echo "Generating dependencies for src/main.cc..."
+g++ -MM -MF obj/src/main.d -MP -MT obj/src/main.o -Wall -O3 -std=c++11 -c -g -Iinc   src/main.cc
+echo "Compiling src/main.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/main.cc -o obj/src/main.o
+echo "Generating dependencies for src/dram_controller.cc..."
+g++ -MM -MF obj/src/dram_controller.d -MP -MT obj/src/dram_controller.o -Wall -O3 -std=c++11 -c -g -Iinc   src/dram_controller.cc
+echo "Compiling src/dram_controller.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/dram_controller.cc -o obj/src/dram_controller.o
+echo "Generating dependencies for branch/branch_predictor.cc..."
+g++ -MM -MF obj/branch/branch_predictor.d -MP -MT obj/branch/branch_predictor.o -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc
+echo "Compiling branch/branch_predictor.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc -o obj/branch/branch_predictor.o
+echo "Generating dependencies for replacement/llc_replacement.cc..."
+g++ -MM -MF obj/replacement/llc_replacement.d -MP -MT obj/replacement/llc_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/llc_replacement.cc
+echo "Compiling replacement/llc_replacement.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   replacement/llc_replacement.cc -o obj/replacement/llc_replacement.o
+echo "Generating dependencies for replacement/base_replacement.cc..."
+g++ -MM -MF obj/replacement/base_replacement.d -MP -MT obj/replacement/base_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/base_replacement.cc
+echo "Compiling replacement/base_replacement.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   replacement/base_replacement.cc -o obj/replacement/base_replacement.o
+echo "Generating dependencies for prefetcher/kpcp_util.cc..."
+g++ -MM -MF obj/prefetcher/kpcp_util.d -MP -MT obj/prefetcher/kpcp_util.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/kpcp_util.cc
+echo "Compiling prefetcher/kpcp_util.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/kpcp_util.cc -o obj/prefetcher/kpcp_util.o
+echo "Generating dependencies for prefetcher/l2c_prefetcher.cc..."
+g++ -MM -MF obj/prefetcher/l2c_prefetcher.d -MP -MT obj/prefetcher/l2c_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc
+echo "Compiling prefetcher/l2c_prefetcher.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc -o obj/prefetcher/l2c_prefetcher.o
+echo "Generating dependencies for prefetcher/l1i_prefetcher.cc..."
+g++ -MM -MF obj/prefetcher/l1i_prefetcher.d -MP -MT obj/prefetcher/l1i_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1i_prefetcher.cc
+echo "Compiling prefetcher/l1i_prefetcher.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1i_prefetcher.cc -o obj/prefetcher/l1i_prefetcher.o
+echo "Generating dependencies for prefetcher/l1d_prefetcher.cc..."
+g++ -MM -MF obj/prefetcher/l1d_prefetcher.d -MP -MT obj/prefetcher/l1d_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc
+echo "Compiling prefetcher/l1d_prefetcher.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc -o obj/prefetcher/l1d_prefetcher.o
+echo "Generating dependencies for prefetcher/llc_prefetcher.cc..."
+g++ -MM -MF obj/prefetcher/llc_prefetcher.d -MP -MT obj/prefetcher/llc_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/llc_prefetcher.cc
+echo "Compiling prefetcher/llc_prefetcher.cc..."
+g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/llc_prefetcher.cc -o obj/prefetcher/llc_prefetcher.o
+mkdir -p `dirname bin/champsim`
+echo "Linking bin/champsim..."
+g++ obj/src/block.o obj/src/cache.o obj/src/AuxiliaryTagDirectory.o obj/src/uncore.o obj/src/ooo_cpu.o obj/src/main.o obj/src/dram_controller.o obj/branch/branch_predictor.o obj/replacement/llc_replacement.o obj/replacement/base_replacement.o obj/prefetcher/kpcp_util.o obj/prefetcher/l2c_prefetcher.o obj/prefetcher/l1i_prefetcher.o obj/prefetcher/l1d_prefetcher.o obj/prefetcher/llc_prefetcher.o  -o bin/champsim
+make: Leaving directory '/home/skhan/Assignments/CS204Project/ChampSim'
+ 

@@ -1,8 +1,9 @@
-#include "AuxiiaryTagDirectory.h"
-#include "cache.h"
+
+#include "AuxiliaryTagDirectory.h"
+//#include "cache.h"
 #include "uncore.h"
 #include "ooo_cpu.h"
-void UpdateATD(PACKET *packet)
+void ATD::UpdateATD(PACKET *packet)
 {
     int set= uncore.LLC.get_set(packet->address);
     if (set%SamplingFrequency==0) //If the set is included in Set sampling
