@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "limits": "cpp",
+        "memory_resource": "cpp"
+    }
+}

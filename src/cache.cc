@@ -231,7 +231,6 @@ void CACHE::handle_writeback()
     uint32_t writeback_cpu = WQ.entry[WQ.head].cpu;
     if (writeback_cpu == NUM_CPUS)
         return;
-
     // handle the oldest entry
     if ((WQ.entry[WQ.head].event_cycle <= current_core_cycle[writeback_cpu]) && (WQ.occupancy > 0)) {
         int index = WQ.head;

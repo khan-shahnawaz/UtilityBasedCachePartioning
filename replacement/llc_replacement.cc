@@ -1,11 +1,11 @@
 #include "cache.h"
 #include "uncore.h"
+#include "ooo_cpu.h"
 // initialize replacement state
 void CACHE::llc_initialize_replacement()
 {
 
 }
-
 // find replacement victim
 uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t ip, uint64_t full_addr, uint32_t type)
 {
@@ -122,6 +122,7 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
     {
         block[set][way].lru=UINT32_MAX;
     }
+    //cout << cpu << " " << block[set][way].cpu << " " << hit <<endl;
     for (uint32_t i=0; i<NUM_WAY; i++) {
         if (block[set][i].lru < block[set][way].lru && block[set][i].cpu==cpu) {
             block[set][i].lru++;
