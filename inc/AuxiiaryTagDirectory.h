@@ -33,6 +33,6 @@ class ATD {
             UMON_Global[i]=0;
         }
     };
-    int UpdateATD(PACKET *packet);
+    int UpdateATD(PACKET *packet, int hit);
 };
 
