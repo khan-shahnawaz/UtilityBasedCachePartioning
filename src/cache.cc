@@ -1,6 +1,6 @@
 #include "cache.h"
 #include "set.h"
-
+#include "ooo_cpu.h"
 uint64_t l2pf_access = 0;
 
 void CACHE::handle_fill()
@@ -292,7 +292,10 @@ void CACHE::handle_writeback()
             WQ.remove_queue(&WQ.entry[index]);
         }
         else { // writeback miss (or RFO miss for L1D)
-            
+            if (cache_type == IS_L1I || cache_type == IS_L1D)
+            {
+              ooo_cpu[writeback_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+            }
             DP ( if (warmup_complete[writeback_cpu]) {
             cout << "[" << NAME << "] " << __func__ << " type: " << +WQ.entry[index].type << " miss";
             cout << " instr_id: " << WQ.entry[index].instr_id << " address: " << hex << WQ.entry[index].address;
@@ -536,7 +539,10 @@ void CACHE::handle_read()
             // access cache
             uint32_t set = get_set(RQ.entry[index].address);
             int way = check_hit(&RQ.entry[index]);
-            
+            if (cache_type == IS_L1I || cache_type == IS_L1D)
+            {
+              ooo_cpu[read_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+            }
             if (way >= 0) { // read hit
 
                 if (cache_type == IS_ITLB) {
@@ -839,7 +845,10 @@ void CACHE::handle_prefetch()
             // access cache
             uint32_t set = get_set(PQ.entry[index].address);
             int way = check_hit(&PQ.entry[index]);
-            
+            if (cache_type == IS_L1I || cache_type == IS_L1D)
+            {
+              ooo_cpu[prefetch_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+            }
             if (way >= 0) { // prefetch hit
 
                 // update replacement policy
