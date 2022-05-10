@@ -97,7 +97,7 @@ class O3_CPU {
         cpu = 0;
         // trace
         trace_file = NULL;
-
+        TagDirectory = ATD();
         // instruction
         instr_unique_id = 0;
         completed_executions = 0;

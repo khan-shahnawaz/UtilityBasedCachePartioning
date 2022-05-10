@@ -701,7 +701,7 @@ int main(int argc, char** argv)
 
         // BRANCH PREDICTOR
         ooo_cpu[i].initialize_branch_predictor();
-
+        
         // TLBs
         ooo_cpu[i].ITLB.cpu = i;
         ooo_cpu[i].ITLB.cache_type = IS_ITLB;
@@ -742,7 +742,7 @@ int main(int argc, char** argv)
         ooo_cpu[i].L1D.fill_level = FILL_L1;
         ooo_cpu[i].L1D.lower_level = &ooo_cpu[i].L2C; 
         ooo_cpu[i].L1D.l1d_prefetcher_initialize();
-
+        ooo_cpu[i].TagDirectory=ATD();
         ooo_cpu[i].L2C.cpu = i;
         ooo_cpu[i].L2C.cache_type = IS_L2C;
         ooo_cpu[i].L2C.fill_level = FILL_L2;
@@ -750,7 +750,6 @@ int main(int argc, char** argv)
         ooo_cpu[i].L2C.upper_level_dcache[i] = &ooo_cpu[i].L1D;
         ooo_cpu[i].L2C.lower_level = &uncore.LLC;
         ooo_cpu[i].L2C.l2c_prefetcher_initialize();
-
         // SHARED CACHE
         uncore.LLC.cache_type = IS_LLC;
         uncore.LLC.fill_level = FILL_LLC;
@@ -781,14 +780,17 @@ int main(int argc, char** argv)
         num_page[i] = 0;
         minor_fault[i] = 0;
         major_fault[i] = 0;
+        
     }
 
     uncore.LLC.llc_initialize_replacement();
+    
     uncore.LLC.llc_prefetcher_initialize();
-
+    
     // simulation entry point
     start_time = time(NULL);
     uint8_t run_simulation = 1;
+    
     while (run_simulation) {
 
         uint64_t elapsed_second = (uint64_t)(time(NULL) - start_time),
@@ -796,11 +798,11 @@ int main(int argc, char** argv)
                  elapsed_hour = elapsed_minute / 60;
         elapsed_minute -= elapsed_hour*60;
         elapsed_second -= (elapsed_hour*3600 + elapsed_minute*60);
-
+        
         for (int i=0; i<NUM_CPUS; i++) {
             // proceed one cycle
             current_core_cycle[i]++;
-
+            
             //cout << "Trying to process instr_id: " << ooo_cpu[i].instr_unique_id << " fetch_stall: " << +ooo_cpu[i].fetch_stall;
             //cout << " stall_cycle: " << stall_cycle[i] << " current: " << current_core_cycle[i] << endl;
 
@@ -813,22 +815,23 @@ int main(int argc, char** argv)
 
 	      // complete 
 	      ooo_cpu[i].update_rob();
-
+          
 	      // schedule
 	      uint32_t schedule_index = ooo_cpu[i].ROB.next_schedule;
 	      if ((ooo_cpu[i].ROB.entry[schedule_index].scheduled == 0) && (ooo_cpu[i].ROB.entry[schedule_index].event_cycle <= current_core_cycle[i]))
 		ooo_cpu[i].schedule_instruction();
 	      // execute
 	      ooo_cpu[i].execute_instruction();
-
+          
 	      ooo_cpu[i].update_rob();
 
 	      // memory operation
 	      ooo_cpu[i].schedule_memory_instruction();
+    
 	      ooo_cpu[i].execute_memory_instruction();
 
 	      ooo_cpu[i].update_rob();
-
+          
 	      // decode
 	      if(ooo_cpu[i].DECODE_BUFFER.occupancy > 0)
 		{

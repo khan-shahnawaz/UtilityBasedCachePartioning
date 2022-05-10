@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "limits": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "iostream": "cpp"
     }
 }

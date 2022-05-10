@@ -8,7 +8,7 @@ uint32_t SCHEDULING_LATENCY = 0, EXEC_LATENCY = 0, DECODE_LATENCY = 0;
 
 void O3_CPU::initialize_core()
 {
-
+    
 }
 
 void O3_CPU::read_from_trace()
@@ -1805,13 +1805,17 @@ void O3_CPU::reg_RAW_release(uint32_t rob_index)
 
 void O3_CPU::operate_cache()
 {
+    
     ITLB.operate();
+    
     DTLB.operate();
     STLB.operate();
+    
     L1I.operate();
+    
     L1D.operate();
     L2C.operate();
-
+    
     // also handle per-cycle prefetcher operation
     l1i_prefetcher_cycle_operate();
 }
