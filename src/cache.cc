@@ -542,7 +542,7 @@ void CACHE::handle_read()
             
             if (cache_type == IS_L1I || cache_type == IS_L1D)
             {
-              ooo_cpu[read_cpu].TagDirectory.UpdateATD(&WQ.entry[index],read_cpu);
+              ooo_cpu[read_cpu].TagDirectory.UpdateATD(&RQ.entry[index],read_cpu);
               
             }
             
@@ -850,7 +850,7 @@ void CACHE::handle_prefetch()
             int way = check_hit(&PQ.entry[index]);
             if (cache_type == IS_L1I || cache_type == IS_L1D)
             {
-              ooo_cpu[prefetch_cpu].TagDirectory.UpdateATD(&WQ.entry[index],prefetch_cpu);
+              ooo_cpu[prefetch_cpu].TagDirectory.UpdateATD(&PQ.entry[index],prefetch_cpu);
             }
             if (way >= 0) { // prefetch hit
 

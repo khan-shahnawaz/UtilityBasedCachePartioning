@@ -17,6 +17,8 @@ void ATD::UpdateATD(PACKET *packet,int cpu)
         {
             if (myTagDirectory->ATDBlock[mySet][i].valid==1 && myTagDirectory->ATDBlock[mySet][i].tag==packet->address)
             {
+                
+                
                 myTagDirectory->UMON_Global[myTagDirectory->ATDBlock[mySet][i].lru]++; //Incrementing the corresponding LRU position in the UMON after a hit
                 for (int way=0;way<LLC_WAY;way++) // Updating the LRU position of the ATD Block
                 {
@@ -25,6 +27,7 @@ void ATD::UpdateATD(PACKET *packet,int cpu)
                         myTagDirectory->ATDBlock[mySet][way].lru++;
                     }
                 }
+                
                 myTagDirectory->ATDBlock[mySet][i].lru=0;
                 return;
             }
@@ -35,6 +38,7 @@ void ATD::UpdateATD(PACKET *packet,int cpu)
         {
             if (myTagDirectory->ATDBlock[mySet][i].valid==0)
             {
+                myTagDirectory->ATDBlock[mySet][i].lru=LLC_WAY;
                 myTagDirectory->ATDBlock[mySet][i].tag=packet->address;
                 myTagDirectory->ATDBlock[mySet][i].valid=1;
                 for (int way=0;way<LLC_WAY;way++)
@@ -68,4 +72,5 @@ void ATD::UpdateATD(PACKET *packet,int cpu)
         }
         
     }
+    return;
 }
