@@ -7,8 +7,7 @@ int bimodal_table[NUM_CPUS][BIMODAL_TABLE_SIZE];
 
 void O3_CPU::initialize_branch_predictor()
 {
-    cout << "CPU " << cpu << " Bimodal branch predictor" << endl;
-
+    cout << "CPU " << cpu << " Bimodal branch predictor"<<endl;
     for(int i = 0; i < BIMODAL_TABLE_SIZE; i++)
         bimodal_table[cpu][i] = 0;
 }

@@ -294,7 +294,7 @@ void CACHE::handle_writeback()
         else { // writeback miss (or RFO miss for L1D)
             if (cache_type == IS_L1I || cache_type == IS_L1D)
             {
-              ooo_cpu[writeback_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+              ooo_cpu[writeback_cpu].TagDirectory.UpdateATD(&WQ.entry[index],writeback_cpu);
             }
             DP ( if (warmup_complete[writeback_cpu]) {
             cout << "[" << NAME << "] " << __func__ << " type: " << +WQ.entry[index].type << " miss";
@@ -539,10 +539,13 @@ void CACHE::handle_read()
             // access cache
             uint32_t set = get_set(RQ.entry[index].address);
             int way = check_hit(&RQ.entry[index]);
+            
             if (cache_type == IS_L1I || cache_type == IS_L1D)
             {
-              ooo_cpu[read_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+              ooo_cpu[read_cpu].TagDirectory.UpdateATD(&WQ.entry[index],read_cpu);
+              
             }
+            
             if (way >= 0) { // read hit
 
                 if (cache_type == IS_ITLB) {
@@ -847,7 +850,7 @@ void CACHE::handle_prefetch()
             int way = check_hit(&PQ.entry[index]);
             if (cache_type == IS_L1I || cache_type == IS_L1D)
             {
-              ooo_cpu[prefetch_cpu].TagDirectory.UpdateATD(&WQ.entry[index]);
+              ooo_cpu[prefetch_cpu].TagDirectory.UpdateATD(&WQ.entry[index],prefetch_cpu);
             }
             if (way >= 0) { // prefetch hit
 
@@ -1052,9 +1055,13 @@ void CACHE::handle_prefetch()
 
 void CACHE::operate()
 {
+  
     handle_fill();
+    
     handle_writeback();
+    
     reads_available_this_cycle = MAX_READ;
+    
     handle_read();
 
     if (PQ.occupancy && (reads_available_this_cycle > 0))

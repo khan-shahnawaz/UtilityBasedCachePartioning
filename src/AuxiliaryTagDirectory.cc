@@ -3,12 +3,15 @@
 //#include "cache.h"
 #include "uncore.h"
 #include "ooo_cpu.h"
-void ATD::UpdateATD(PACKET *packet)
+void ATD::UpdateATD(PACKET *packet,int cpu)
 {
+    
     int set= uncore.LLC.get_set(packet->address);
+    
     if (set%SamplingFrequency==0) //If the set is included in Set sampling
     {
-        ATD *myTagDirectory = &ooo_cpu[packet->cpu].TagDirectory; // Getting tag directory of the CPU sending a packet
+        
+        ATD *myTagDirectory = &ooo_cpu[cpu].TagDirectory; // Getting tag directory of the CPU sending a packet
         int mySet = set/SamplingFrequency; //The set in the ATD is mapped to set in the LLC
         for (int i=0;i<LLC_WAY;i++) //Checking if it is a hit in ATD
         {
@@ -25,7 +28,9 @@ void ATD::UpdateATD(PACKET *packet)
                 myTagDirectory->ATDBlock[mySet][i].lru=0;
                 return;
             }
+            
         }
+        
         for (int i=0;i<LLC_WAY;i++)
         {
             if (myTagDirectory->ATDBlock[mySet][i].valid==0)
@@ -43,6 +48,7 @@ void ATD::UpdateATD(PACKET *packet)
                 return;
             }
         }
+        
         for (int i=0;i<LLC_WAY;i++)
         {
             if (myTagDirectory->ATDBlock[mySet][i].lru==LLC_WAY-1)
@@ -60,5 +66,6 @@ void ATD::UpdateATD(PACKET *packet)
             }
             
         }
+        
     }
 }

@@ -9,11 +9,12 @@ class ATDBlocks {
   public:
 
   uint64_t tag;
-  uint8_t valid,lru;
+  uint32_t valid,lru;
 
     ATDBlocks() {
         valid = 0;
         lru = 0;
+        tag=0;
     };
 };
 
@@ -34,7 +35,7 @@ class ATD {
             UMON_Global[i]=0;
         }
     };
-    void UpdateATD(PACKET *packet);
+    void UpdateATD(PACKET *packet, int cpu);
 };
 
 #endif
