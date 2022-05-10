@@ -4,6 +4,7 @@
 #include "champsim.h"
 #include "cache.h"
 #include "dram_controller.h"
+
 //#include "drc_controller.h"
 
 //#define DRC_MSHR_SIZE 48
@@ -17,8 +18,8 @@ class UNCORE {
     int32_t wayAllocated[NUM_CPUS]={0};
     // DRAM
     MEMORY_CONTROLLER DRAM{"DRAM"}; 
-
     UNCORE(); 
+    void UpdatePartition();
 };
 
 extern UNCORE uncore;

@@ -17,15 +17,15 @@ CPU 1 Bimodal branch predictor
 CPU 2 Bimodal branch predictor
 CPU 3 Bimodal branch predictor
 
-Warmup complete CPU 0 instructions: 1070627 cycles: 557578 (Simulation time: 0 hr 0 min 16 sec) 
-Warmup complete CPU 1 instructions: 1470393 cycles: 557578 (Simulation time: 0 hr 0 min 16 sec) 
-Warmup complete CPU 2 instructions: 1002336 cycles: 557578 (Simulation time: 0 hr 0 min 16 sec) 
-Warmup complete CPU 3 instructions: 1000003 cycles: 557578 (Simulation time: 0 hr 0 min 16 sec) 
+Warmup complete CPU 0 instructions: 1070627 cycles: 557578 (Simulation time: 0 hr 0 min 14 sec) 
+Warmup complete CPU 1 instructions: 1470393 cycles: 557578 (Simulation time: 0 hr 0 min 14 sec) 
+Warmup complete CPU 2 instructions: 1002336 cycles: 557578 (Simulation time: 0 hr 0 min 14 sec) 
+Warmup complete CPU 3 instructions: 1000003 cycles: 557578 (Simulation time: 0 hr 0 min 14 sec) 
 
-Finished CPU 1 instructions: 1000002 cycles: 779732 cumulative IPC: 1.28249 (Simulation time: 0 hr 0 min 24 sec) 
-Finished CPU 0 instructions: 1000000 cycles: 1022450 cumulative IPC: 0.978043 (Simulation time: 0 hr 0 min 26 sec) 
-Finished CPU 3 instructions: 1000003 cycles: 3805138 cumulative IPC: 0.262803 (Simulation time: 0 hr 0 min 53 sec) 
-Finished CPU 2 instructions: 1000000 cycles: 3822334 cumulative IPC: 0.26162 (Simulation time: 0 hr 0 min 53 sec) 
+Finished CPU 1 instructions: 1000002 cycles: 779732 cumulative IPC: 1.28249 (Simulation time: 0 hr 0 min 22 sec) 
+Finished CPU 0 instructions: 1000000 cycles: 1022450 cumulative IPC: 0.978043 (Simulation time: 0 hr 0 min 25 sec) 
+Finished CPU 3 instructions: 1000003 cycles: 3805138 cumulative IPC: 0.262803 (Simulation time: 0 hr 0 min 54 sec) 
+Finished CPU 2 instructions: 1000000 cycles: 3822334 cumulative IPC: 0.26162 (Simulation time: 0 hr 0 min 54 sec) 
 
 ChampSim completed all CPUs
 

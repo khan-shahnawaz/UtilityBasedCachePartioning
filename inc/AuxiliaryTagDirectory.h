@@ -35,7 +35,7 @@ class ATD {
             UMON_Global[i]=0;
         }
     };
-    void UpdateATD(PACKET *packet, int cpu);
+    void UpdateATD(PACKET *packet, int cpu, int WriteBackHit);
 };
 
 #endif

@@ -118,6 +118,13 @@ void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t wa
     // baseline LRU
     if (hit && (type == WRITEBACK)) // writeback hit does not update LRU state
         return;
+        
+    //uncore.UpdatePartition();
+    // for (int i=0;i<NUM_CPUS;i++)
+    // {
+    //     cout << uncore.wayAllocated[i] <<" "<<current_core_cycle[i]<<" ";
+    // }
+    // cout <<"\n";
     if (hit==0)
     {
         block[set][way].lru=UINT32_MAX;
