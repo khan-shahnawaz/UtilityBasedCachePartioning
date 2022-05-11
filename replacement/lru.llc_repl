@@ -14,6 +14,7 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
     // fill invalid line first
     for (way=0; way<NUM_WAY; way++) {
         if (block[set][way].valid == false) {
+            //cout << way <<"afgn";
     
             DP ( if (warmup_complete[cpu]) {
             cout << "[" << NAME << "] " << __func__ << " instr_id: " << instr_id << " invalid set: " << set << " way: " << way;
@@ -24,6 +25,7 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
         }
     }
     // LRU victim
+    //cout << way<< " "<< NUM_WAY;
     uint32_t cpuBlockCount[NUM_CPUS];
     for (int i = 0; i<NUM_CPUS;i++)
     {
@@ -64,7 +66,7 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
         }
         
     }
-
+    //cout << way<<NUM_WAY;
     if (way == NUM_WAY) {
         cerr << "[" << NAME << "] " << __func__ << " no victim! set: " << set  << endl;
         for (int i=0;i<NUM_CPUS;i++)
@@ -85,7 +87,7 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
     // }
     // cout <<"\n";
     // }
-    // return way;
+     return way;
 }
 
 // called on every cache hit and cache fill
