@@ -1,3 +1,19 @@
+# Commands
+
+```
+$ chmod +x build_champsim.sh
+$ sed -i -e 's/\r$/\n/' build_champsim.sh
+$ ./build_champsim.sh bimodal no no no no lru 2
+$ chmod +x run_2core.sh
+$ sed -i -e 's/\r$/\n/' run_2core.sh
+$ ./run_2core.sh bimodal-no-no-no-no-lru-2core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz
+```
+
+# Trace
+```
+https://www.dropbox.com/sh/pgmnzfr3hurlutq/AACciuebRwSAOzhJkmj5SEXBa/CRC2_trace?dl=0&subfolder_nav_tracking=1
+```
+
 <p align="center">
   <h1 align="center"> ChampSim </h1>
   <p> ChampSim is a trace-based simulator for a microarchitecture study. You can sign up to the public mailing list by sending an empty mail to champsim+subscribe@googlegroups.com. Traces for the 3rd Data Prefetching Championship (DPC-3) can be found from here (https://dpc3.compas.cs.stonybrook.edu/?SW_IS). A set of traces used for the 2nd Cache Replacement Championship (CRC-2) can be found from this link. (http://bit.ly/2t2nkUj) <p>
