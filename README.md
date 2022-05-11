@@ -139,10 +139,13 @@ Good luck and be a champion! <br>
 
 # Commands
 
-1. chmod +x build_champsim.sh
-2. sed -i -e 's/\r$/\n/' build_champsim.sh
-3. ./build_champsim.sh bimodal no no no no lru 2
-4. chmod +x run_2core.sh
-5. sed -i -e 's/\r$/\n/' run_2core.sh
-6. ./run_2core.sh bimodal-no-no-no-no-lru-2core 1 10 0 gcc_13B.trace.xz gcc_56B
+
+$ chmod +x build_champsim.sh
+$ 0sed -i -e 's/\r$/\n/' build_champsim.sh
+$ ./build_champsim.sh bimodal no no no no lru 2
+$ chmod +x run_2core.sh
+$ sed -i -e 's/\r$/\n/' run_2core.sh
+$ ./run_2core.sh bimodal-no-no-no-no-lru-2core 1 10 0 gcc_13B.trace.xz gcc_56B
 .trace.xz
+
+
