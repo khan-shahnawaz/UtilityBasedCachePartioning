@@ -77,15 +77,15 @@ uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, c
         }
         assert(0);
     }
-    // if (set%128==0)
+    // if (set)
     // {
     // for (int i=0;i<NUM_CPUS;i++)
     // {
-    //     cout << cpuBlockCount[i] << " ";
+    //     cout << cpuBlockCount[i] << ": "<<uncore.wayAllocated[i]<<" |";
     // }
     // cout <<"\n";
     // }
-    return way;
+    // return way;
 }
 
 // called on every cache hit and cache fill
