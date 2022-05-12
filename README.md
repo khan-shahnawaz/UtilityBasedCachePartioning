@@ -39,7 +39,7 @@ $ sed -i -e 's/\r$/\n/' build_champsim.sh
 $ ./build_champsim.sh bimodal no no no no lru 4
 $ chmod +x run_4core.sh
 $ sed -i -e 's/\r$/\n/' run_4core.sh
-$ ./run_4core.sh bimodal-no-no-no-no-lru-4core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.xz bwaves_1861B.xz
+$ ./run_4core.sh bimodal-no-no-no-no-lru-4core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.trace.xz bwaves_1861B.trace.xz
 ```
 
 3. For 8 cores ->
@@ -50,7 +50,7 @@ $ sed -i -e 's/\r$/\n/' build_champsim.sh
 $ ./build_champsim.sh bimodal no no no no lru 8
 $ chmod +x run_8core.sh
 $ sed -i -e 's/\r$/\n/' run_8core.sh
-$ ./run_8core.sh bimodal-no-no-no-no-lru-8core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.xz bwaves_1861B.xz gobmk_135B.xz lbm_1004B.xz leslie3d_1186B.xz milc_744B.xz
+$ ./run_8core.sh bimodal-no-no-no-no-lru-8core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.trace.xz bwaves_1861B.trace.xz gobmk_135B.trace.xz lbm_1004B.trace.xz leslie3d_1186B.trace.xz milc_744B.trace.xz
 ```
 # Important Notes
 
