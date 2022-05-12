@@ -2,7 +2,7 @@
 
 1. Shahnawaz Khan - 2020CSB1123
 2. Prashant Mittal - 2020CSB1113
-3. Raj Gupta - 2020CSB1116
+3. Raj - 2020CSB1116
 4. Tanish Goyal - 2020CSB1133
 5. Anubhav Kataria - 2020CSB1073
 
