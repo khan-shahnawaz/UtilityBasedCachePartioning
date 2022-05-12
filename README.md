@@ -6,7 +6,7 @@
 
 # Updated files
 
-1. uncore.cc and uncore.h - partitioning algorithm is implimented in 'em. Since greedy fails to see potentially high gains after the first block if there is no gain from the first block, we used "lookahead algorithm" for partioning the ways for each cpu.
+1. uncore.cc and uncore.h - partitioning algorithm is implimented in them. Since greedy fails to see potentially high gains, after the first block if there is no gain from the first block, we used "lookahead algorithm" for partioning the ways for each CPU.
 
 2. lru.llc_repl has been updated to implement the ucp(utility based cache partitioning).
 
