@@ -52,12 +52,11 @@ $ chmod +x run_8core.sh
 $ sed -i -e 's/\r$/\n/' run_8core.sh
 $ ./run_8core.sh bimodal-no-no-no-no-lru-8core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.xz bwaves_1861B.xz gobmk_135B.xz lbm_1004B.xz leslie3d_1186B.xz milc_744B.xz
 ```
+## Important Notes
 
-Note : After extracting the file, download the trace files and then save them in the dcp3_traces folder before running the commands.
-
-Note : You can change the given traces to whatever traces you want to test on (PS : Make sure to add the traces in dpc3_traces folder).
-
-Note : You can change the number of instructions you want to run on the traces by changing the 10 in last command with any positive integer value.
+1. After extracting the file, download the trace files and then save them in the dcp3_traces folder before running the commands.
+2. You can change the given traces to whatever traces you want to test on. (NOTE : Make sure to add the traces in dpc3_traces folder)
+3. You can change the number of instructions you want to run on the traces by changing the 10 in last command with any positive integer value.
 
 # Traces Folder
 
