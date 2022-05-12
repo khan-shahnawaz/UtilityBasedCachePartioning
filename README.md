@@ -45,7 +45,7 @@ $ sed -i -e 's/\r$/\n/' run_8core.sh
 $ ./run_8core.sh bimodal-no-no-no-no-lru-8core 1 10 0 gcc_13B.trace.xz gcc_56B.trace.xz GemsFDTD_716B.xz bwaves_1861B.xz gobmk_135B.xz lbm_1004B.xz leslie3d_1186B.xz milc_744B.xz
 ```
 
-Note : You can change the given traces to whatever traces you want to test on. (PS : Make sure to add the traces in dpc3_traces folder.)
+Note : You can change the given traces to whatever traces you want to test on. (NOTE : Make sure to add the traces in dpc3_traces folder.)
 
 # Traces Folder
 
