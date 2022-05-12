@@ -54,7 +54,9 @@ $ ./run_8core.sh bimodal-no-no-no-no-lru-8core 1 10 0 gcc_13B.trace.xz gcc_56B.t
 ```
 
 Note : After extracting the file, download the trace files and then save them in the dcp3_traces folder before running the commands.
-Note : You can change the given traces to whatever traces you want to test on. (NOTE : Make sure to add the traces in dpc3_traces folder)
+
+Note : You can change the given traces to whatever traces you want to test on (PS : Make sure to add the traces in dpc3_traces folder).
+
 Note : You can change the number of instructions you want to run on the traces by changing the 10 in last command with any positive integer value.
 
 # Traces Folder
