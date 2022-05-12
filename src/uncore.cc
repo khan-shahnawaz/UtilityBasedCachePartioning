@@ -52,4 +52,11 @@ void UNCORE:: UpdatePartition()
         balance-=way;
         
     }
+    for (int core=0;core<NUM_CPUS;core++)
+    {
+        for (int i=0;i<LLC_WAY;i++)
+        {
+            ooo_cpu[core].TagDirectory.UMON_Global[i]/=2;
+        }
+    }
 }

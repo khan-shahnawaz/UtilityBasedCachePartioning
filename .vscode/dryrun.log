@@ -2,6 +2,7 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/skhan/Assignments/CS204Project/ChampSim'
  
 for dir in ./branch ./prefetcher ./src ./replacement ./scripts ./cvp_tracer; do mkdir -p obj/$dir; done
+ 
 echo "Generating dependencies for src/block.cc..."
 g++ -MM -MF obj/src/block.d -MP -MT obj/src/block.o -Wall -O3 -std=c++11 -c -g -Iinc   src/block.cc
 echo "Compiling src/block.cc..."
@@ -22,6 +23,7 @@ echo "Generating dependencies for src/ooo_cpu.cc..."
 g++ -MM -MF obj/src/ooo_cpu.d -MP -MT obj/src/ooo_cpu.o -Wall -O3 -std=c++11 -c -g -Iinc   src/ooo_cpu.cc
 echo "Compiling src/ooo_cpu.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/ooo_cpu.cc -o obj/src/ooo_cpu.o
+ 
 echo "Generating dependencies for src/main.cc..."
 g++ -MM -MF obj/src/main.d -MP -MT obj/src/main.o -Wall -O3 -std=c++11 -c -g -Iinc   src/main.cc
 echo "Compiling src/main.cc..."
@@ -34,6 +36,7 @@ echo "Generating dependencies for branch/branch_predictor.cc..."
 g++ -MM -MF obj/branch/branch_predictor.d -MP -MT obj/branch/branch_predictor.o -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc
 echo "Compiling branch/branch_predictor.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc -o obj/branch/branch_predictor.o
+ 
 echo "Generating dependencies for replacement/llc_replacement.cc..."
 g++ -MM -MF obj/replacement/llc_replacement.d -MP -MT obj/replacement/llc_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/llc_replacement.cc
 echo "Compiling replacement/llc_replacement.cc..."
@@ -42,11 +45,13 @@ echo "Generating dependencies for replacement/base_replacement.cc..."
 g++ -MM -MF obj/replacement/base_replacement.d -MP -MT obj/replacement/base_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/base_replacement.cc
 echo "Compiling replacement/base_replacement.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   replacement/base_replacement.cc -o obj/replacement/base_replacement.o
+ 
 echo "Generating dependencies for prefetcher/kpcp_util.cc..."
 g++ -MM -MF obj/prefetcher/kpcp_util.d -MP -MT obj/prefetcher/kpcp_util.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/kpcp_util.cc
 echo "Compiling prefetcher/kpcp_util.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/kpcp_util.cc -o obj/prefetcher/kpcp_util.o
 echo "Generating dependencies for prefetcher/l2c_prefetcher.cc..."
+ 
 g++ -MM -MF obj/prefetcher/l2c_prefetcher.d -MP -MT obj/prefetcher/l2c_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc
 echo "Compiling prefetcher/l2c_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc -o obj/prefetcher/l2c_prefetcher.o
@@ -55,6 +60,7 @@ g++ -MM -MF obj/prefetcher/l1i_prefetcher.d -MP -MT obj/prefetcher/l1i_prefetche
 echo "Compiling prefetcher/l1i_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1i_prefetcher.cc -o obj/prefetcher/l1i_prefetcher.o
 echo "Generating dependencies for prefetcher/l1d_prefetcher.cc..."
+ 
 g++ -MM -MF obj/prefetcher/l1d_prefetcher.d -MP -MT obj/prefetcher/l1d_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc
 echo "Compiling prefetcher/l1d_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc -o obj/prefetcher/l1d_prefetcher.o
