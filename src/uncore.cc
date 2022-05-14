@@ -13,19 +13,20 @@ UNCORE::UNCORE() {
 void UNCORE:: UpdatePartition() // lookahead algorithm (UCP paper)
 {
     int balance = LLC_WAY-NUM_CPUS;
-
-    
     for (int core =0;core<NUM_CPUS;core++)
     {
         wayAllocated[core]=1;
     }
+    
     int wayReq[NUM_CPUS];
     float maxUtil[NUM_CPUS];
+    
     while (balance>0)
     {
         float curUtil=-1;
         int way=0;
         int maxUtilCore;
+        
         for (int core=0;core<NUM_CPUS;core++)
         {
             int alloc = wayAllocated[core];
@@ -42,6 +43,7 @@ void UNCORE:: UpdatePartition() // lookahead algorithm (UCP paper)
                     wayReq[core]=cnt;
                 }
             }
+            
             if (curUtil<maxUtil[core])
             {
                 curUtil=maxUtil[core];
