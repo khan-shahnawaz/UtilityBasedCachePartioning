@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu May 12 09:07:48 2022
+# Make data base, printed on Sat May 14 17:01:33 2022
 
 # Variables
 
@@ -23,6 +22,7 @@ DESKTOP_SESSION = ubuntu
 .SHELLFLAGS := -c
 # environment
 XDG_SESSION_CLASS = user
+ 
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -50,7 +50,7 @@ _ = /usr/share/code/code
 # makefile (from 'Makefile', line 30)
 objects := obj/src/block.o obj/src/cache.o obj/src/AuxiliaryTagDirectory.o obj/src/uncore.o obj/src/ooo_cpu.o obj/src/main.o obj/src/dram_controller.o obj/branch/branch_predictor.o obj/replacement/llc_replacement.o obj/replacement/base_replacement.o obj/prefetcher/kpcp_util.o obj/prefetcher/l2c_prefetcher.o obj/prefetcher/l1i_prefetcher.o obj/prefetcher/l1d_prefetcher.o obj/prefetcher/llc_prefetcher.o
 # environment
-JOURNAL_STREAM = 8:45533
+JOURNAL_STREAM = 8:47402
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -70,7 +70,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1603
+MANAGERPID = 1629
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -82,7 +82,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/Lenovo-IdeaPad-Gaming-3-15IMH05:@/tmp/.ICE-unix/1825,unix/Lenovo-IdeaPad-Gaming-3-15IMH05:/tmp/.ICE-unix/1825
+SESSION_MANAGER = local/Lenovo-IdeaPad-Gaming-3-15IMH05:@/tmp/.ICE-unix/1847,unix/Lenovo-IdeaPad-Gaming-3-15IMH05:/tmp/.ICE-unix/1847
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'Makefile', line 25)
@@ -100,7 +100,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 464fcb36c4e640c5b22c7c4ba24c45a6
+INVOCATION_ID = 7afa24ad16ac49ea86303fecbe04ab75
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -112,7 +112,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4918
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2297
 # automatic
 %F = $(notdir $%)
 # environment
@@ -128,7 +128,7 @@ PWD = /home/skhan/Assignments/CS204Project/ChampSim
 # makefile (from 'Makefile', line 27)
 CFlags = -Wall -O3 -std=c++11 -c $(debug) $(inc) $(libDir) $(libs)
 # environment
-SSH_AGENT_PID = 1787
+SSH_AGENT_PID = 1809
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 26)
@@ -170,7 +170,7 @@ CC = $(CXX)
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d21b48f0-9ced-4aec-be81-65c68714fc64.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-242f684c-3370-447d-9470-7f5d6449b50e.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -242,7 +242,7 @@ inc := -Iinc
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4918
+VSCODE_PID = 2297
 # variable set hash-table stats:
 # Load=116/1024=11%, Rehash=0, Collisions=23/179=13%
 
@@ -252,9 +252,9 @@ VSCODE_PID = 4918
 
 # Directories
 
-# . (device 2051, inode 6969648): 28 files, no impossibilities.
+# . (device 2051, inode 6969648): 31 files, no impossibilities.
 
-# 28 files, no impossibilities in 1 directories.
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -317,6 +317,7 @@ obj/prefetcher/l2c_prefetcher.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-04-08 08:38:16.432861
 #  File has been updated.
 #  Successfully updated.
@@ -387,7 +388,6 @@ obj/src/uncore.o:
 # Not a target:
 obj/src/ooo_cpu.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -454,12 +454,12 @@ obj/src/main.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 55 / storage = 785 B / avg = 14 B
-# current buf: size = 8162 B / used = 785 B / count = 55 / avg = 14 B
+# strcache buffers: 1 (0) / strings = 58 / storage = 839 B / avg = 14 B
+# current buf: size = 8162 B / used = 839 B / count = 58 / avg = 14 B
 
-# strcache performance: lookups = 73 / hit rate = 24%
+# strcache performance: lookups = 76 / hit rate = 23%
 # hash-table stats:
-# Load=55/8192=1%, Rehash=0, Collisions=2/73=3%
-# Finished Make data base on Thu May 12 09:07:48 2022
+# Load=58/8192=1%, Rehash=0, Collisions=2/76=3%
+# Finished Make data base on Sat May 14 17:01:33 2022
 
  

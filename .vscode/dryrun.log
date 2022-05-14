@@ -32,15 +32,16 @@ echo "Generating dependencies for src/dram_controller.cc..."
 g++ -MM -MF obj/src/dram_controller.d -MP -MT obj/src/dram_controller.o -Wall -O3 -std=c++11 -c -g -Iinc   src/dram_controller.cc
 echo "Compiling src/dram_controller.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   src/dram_controller.cc -o obj/src/dram_controller.o
+ 
 echo "Generating dependencies for branch/branch_predictor.cc..."
 g++ -MM -MF obj/branch/branch_predictor.d -MP -MT obj/branch/branch_predictor.o -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc
 echo "Compiling branch/branch_predictor.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   branch/branch_predictor.cc -o obj/branch/branch_predictor.o
- 
 echo "Generating dependencies for replacement/llc_replacement.cc..."
 g++ -MM -MF obj/replacement/llc_replacement.d -MP -MT obj/replacement/llc_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/llc_replacement.cc
 echo "Compiling replacement/llc_replacement.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   replacement/llc_replacement.cc -o obj/replacement/llc_replacement.o
+ 
 echo "Generating dependencies for replacement/base_replacement.cc..."
 g++ -MM -MF obj/replacement/base_replacement.d -MP -MT obj/replacement/base_replacement.o -Wall -O3 -std=c++11 -c -g -Iinc   replacement/base_replacement.cc
 echo "Compiling replacement/base_replacement.cc..."
@@ -51,7 +52,6 @@ g++ -MM -MF obj/prefetcher/kpcp_util.d -MP -MT obj/prefetcher/kpcp_util.o -Wall 
 echo "Compiling prefetcher/kpcp_util.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/kpcp_util.cc -o obj/prefetcher/kpcp_util.o
 echo "Generating dependencies for prefetcher/l2c_prefetcher.cc..."
- 
 g++ -MM -MF obj/prefetcher/l2c_prefetcher.d -MP -MT obj/prefetcher/l2c_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc
 echo "Compiling prefetcher/l2c_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l2c_prefetcher.cc -o obj/prefetcher/l2c_prefetcher.o
@@ -59,8 +59,8 @@ echo "Generating dependencies for prefetcher/l1i_prefetcher.cc..."
 g++ -MM -MF obj/prefetcher/l1i_prefetcher.d -MP -MT obj/prefetcher/l1i_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1i_prefetcher.cc
 echo "Compiling prefetcher/l1i_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1i_prefetcher.cc -o obj/prefetcher/l1i_prefetcher.o
-echo "Generating dependencies for prefetcher/l1d_prefetcher.cc..."
  
+echo "Generating dependencies for prefetcher/l1d_prefetcher.cc..."
 g++ -MM -MF obj/prefetcher/l1d_prefetcher.d -MP -MT obj/prefetcher/l1d_prefetcher.o -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc
 echo "Compiling prefetcher/l1d_prefetcher.cc..."
 g++ -Wall -O3 -std=c++11 -c -g -Iinc   prefetcher/l1d_prefetcher.cc -o obj/prefetcher/l1d_prefetcher.o

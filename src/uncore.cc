@@ -14,6 +14,7 @@ void UNCORE:: UpdatePartition()
 {
     int balance = LLC_WAY-NUM_CPUS;
 
+    
     for (int core =0;core<NUM_CPUS;core++)
     {
         wayAllocated[core]=1;
