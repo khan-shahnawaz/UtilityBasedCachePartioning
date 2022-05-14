@@ -31,8 +31,10 @@ void UNCORE:: UpdatePartition() // lookahead algorithm (UCP paper)
         {
             int alloc = wayAllocated[core];
             maxUtil[core]=-1;
+            
             float sum=0;
             int cnt=0;
+            
             for (int i=alloc;i<alloc+balance;i++)
             {
                 sum+=ooo_cpu[core].TagDirectory.UMON_Global[i];
