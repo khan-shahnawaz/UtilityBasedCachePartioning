@@ -10,7 +10,7 @@ UNCORE::UNCORE() {
         wayAllocated[i]=LLC_WAY/NUM_CPUS;
     }
 }
-void UNCORE:: UpdatePartition()
+void UNCORE:: UpdatePartition() // lookahead algorithm (UCP paper)
 {
     int balance = LLC_WAY-NUM_CPUS;
 
